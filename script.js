@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Stats Counter Animation
     const stats = [
-        { id: 'points', value: 50000 },
+        { id: 'points', value: 50473 },
         { id: 'rings', value: 4 },
         { id: 'mvps', value: 4 },
         { id: 'allstar', value: 21 }
