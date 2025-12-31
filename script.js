@@ -83,6 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
             await wait(6000);
         }
 
+        // Key Games
+        const keyGames = document.querySelector('.key-games-section');
+        if (keyGames) {
+            keyGames.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            await wait(7000);
+        }
+
         // Trophy Room
         const trophy = document.querySelector('.trophy-room');
         if (trophy) {
