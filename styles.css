@@ -6,6 +6,7 @@
     --white: #ffffff;
     --transition-speed: 0.3s;
     --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-ease: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 * {
@@ -18,6 +19,19 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-padding-top: 20px;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 body {
@@ -53,6 +67,17 @@ h1, h2, h3 {
 p {
     line-height: 1.7;
     letter-spacing: 0.3px;
+}
+
+/* Custom text selection */
+::selection {
+    background: var(--gold);
+    color: var(--black);
+}
+
+::-moz-selection {
+    background: var(--gold);
+    color: var(--black);
 }
 
 /* Hero Section */
@@ -150,6 +175,21 @@ p {
 
 .movie-btn:active {
     transform: translateY(0);
+}
+
+.movie-btn i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.movie-btn:hover i {
+    transform: scale(1.2);
+}
+
+.movie-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .scroll-indicator {
@@ -305,6 +345,7 @@ section {
     z-index: 2;
     position: relative;
     transition: all 0.4s var(--transition-ease);
+    border-radius: 0 4px 4px 0;
 }
 
 .timeline-content::before {
@@ -344,6 +385,10 @@ section {
     box-shadow: 0 10px 40px rgba(0,0,0,0.8);
     transition: all 0.5s var(--transition-ease);
     position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    border-radius: 4px;
 }
 
 .timeline-item:hover .timeline-img img {
@@ -410,6 +455,7 @@ section {
     border: 1px solid #222;
     transition: all 0.4s var(--transition-ease);
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    border-radius: 8px;
 }
 
 .highlight-card:hover {
@@ -424,6 +470,8 @@ section {
     object-fit: cover;
     transition: transform 0.6s var(--transition-ease), filter 0.4s ease;
     filter: brightness(0.7) contrast(1.1);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .highlight-card:hover img {
@@ -481,6 +529,7 @@ section {
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    border-radius: 0 8px 8px 0;
 }
 
 .game-card::before {
@@ -614,11 +663,12 @@ section {
 .trophy-card {
     padding: 30px 20px;
     background: linear-gradient(135deg, rgba(17, 17, 17, 0.5), rgba(10, 10, 10, 0.5));
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.4s var(--transition-ease);
     cursor: default;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(253, 185, 39, 0.1);
 }
 
 .trophy-card::before {
@@ -931,6 +981,20 @@ blockquote::before {
 
 @keyframes fadeIn { to { opacity: 1; } }
 
+/* Smooth page load */
+body {
+    animation: pageLoad 0.5s ease-out;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .timeline::before { left: 30px; }
@@ -1177,4 +1241,249 @@ blockquote::before {
     .footer h2 { font-size: 1.5rem; }
     .footer p { font-size: 0.9rem; }
     .footer .credits { font-size: 0.85rem; }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    .hero, .scroll-indicator, .movie-btn, .section-divider {
+        display: none !important;
+    }
+
+    .timeline-item {
+        page-break-inside: avoid;
+        margin: 20px 0;
+    }
+
+    .timeline-img img {
+        max-height: 300px;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    .footer {
+        page-break-before: always;
+    }
+}
+
+/* Loading State */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(253, 185, 39, 0.1);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--purple));
+    z-index: 9998;
+    transition: width 0.1s ease;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s var(--transition-ease);
+    box-shadow: 0 4px 12px rgba(253, 185, 39, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(253, 185, 39, 0.5);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px);
+}
+
+/* Enhanced Timeline Connector */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--gold);
+    border: 4px solid var(--black);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 0 0 0 4px rgba(253, 185, 39, 0.2);
+    transition: all 0.4s ease;
+}
+
+.timeline-item:hover::after {
+    transform: translate(-50%, -50%) scale(1.3);
+    box-shadow: 0 0 0 8px rgba(253, 185, 39, 0.3);
+}
+
+/* Tooltip Enhancement */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--gold);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    z-index: 1000;
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+[data-tooltip]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 2px;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Mobile Responsive Timeline Connector */
+@media (max-width: 900px) {
+    .timeline-item::after {
+        left: 30px;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-item::after {
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item::after {
+        left: 15px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .scroll-progress {
+        height: 2px;
+    }
+}
+
+/* Enhance game score animations */
+@keyframes scoreGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(253, 185, 39, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(253, 185, 39, 0.8);
+    }
+}
+
+.team-score.winner .score {
+    animation: scoreGlow 2s ease-in-out infinite;
+}
+
+/* Enhanced card depth on focus */
+.highlight-card:focus-within,
+.game-card:focus-within,
+.trophy-card:focus-within {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
 }
