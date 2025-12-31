@@ -296,6 +296,131 @@ section {
     font-style: italic;
 }
 
+/* Key Games Section */
+.key-games-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+    border: 1px solid #222;
+    border-left: 4px solid var(--gold);
+    padding: 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(253, 185, 39, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--purple);
+    box-shadow: 0 10px 30px rgba(253, 185, 39, 0.2);
+}
+
+.game-card:hover::before {
+    opacity: 1;
+}
+
+.game-header {
+    margin-bottom: 20px;
+}
+
+.game-date {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.game-header h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.game-score {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.team-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-score .team {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: #999;
+    letter-spacing: 2px;
+}
+
+.team-score .score {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.team-score.winner .score {
+    color: var(--gold);
+}
+
+.team-score.winner .team {
+    color: var(--gold);
+}
+
+.game-stats {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.stat-line {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.game-note {
+    font-style: italic;
+    color: #aaa;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Trophy Room */
 .trophy-room {
     background-color: var(--dark-grey);
@@ -421,4 +546,161 @@ blockquote {
     .timeline-img { margin-bottom: 30px; text-align: left; }
     .hero-content h1 { font-size: 3.5rem; }
     .section-title { font-size: 2.5rem; }
+    .narrative-text { font-size: 1.5rem; padding-left: 20px; }
+    .stat-value { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+    section { padding: 60px 15px; }
+
+    /* Hero adjustments */
+    .main-logo { font-size: 4rem; margin-bottom: 20px; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content h2 { font-size: 1.5rem; letter-spacing: 3px; }
+    .hero-content p { font-size: 0.9rem; letter-spacing: 2px; }
+    .movie-btn { padding: 12px 30px; font-size: 1rem; margin-top: 30px; }
+
+    /* Section titles */
+    .section-title { font-size: 2rem; margin-bottom: 40px; }
+    .narrative-text { font-size: 1.3rem; padding-left: 15px; }
+
+    /* Timeline mobile optimization */
+    .timeline::before { left: 20px; }
+    .timeline-item, .timeline-item.reverse {
+        padding-left: 50px;
+        margin: 50px 0;
+    }
+    .timeline-content { padding: 20px; }
+    .timeline-content h3 { font-size: 1.6rem; }
+    .timeline-content .date { font-size: 1rem; }
+    .timeline-content p { font-size: 1rem; }
+
+    /* Highlight cards - 2 column grid on tablet */
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .highlight-card { height: 300px; }
+    .highlight-info h3 { font-size: 1.5rem; }
+    .highlight-info p { font-size: 0.9rem; }
+
+    /* Key Games - single column on tablet */
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .game-card { padding: 25px; }
+    .game-header h3 { font-size: 1.6rem; }
+    .team-score .score { font-size: 2.5rem; }
+
+    /* Trophy grid - 3 columns on tablet */
+    .trophy-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    .trophy-card i { font-size: 3rem; }
+    .trophy-card h3 { font-size: 2.5rem; }
+
+    /* Legacy cards */
+    .legacy-card {
+        min-width: 250px;
+        padding: 30px;
+    }
+
+    /* Quotes */
+    blockquote { font-size: 1.8rem; }
+
+    /* Stats */
+    .stat-value { font-size: 3rem; }
+    .stat-label { font-size: 0.9rem; }
+    .stats-grid { gap: 30px; }
+}
+
+@media (max-width: 480px) {
+    section { padding: 40px 10px; }
+
+    /* Hero - even smaller */
+    .main-logo { font-size: 3rem; margin-bottom: 15px; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .hero-content h2 { font-size: 1.1rem; letter-spacing: 2px; }
+    .hero-content p { font-size: 0.8rem; letter-spacing: 1px; }
+    .movie-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        margin-top: 20px;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Section titles */
+    .section-title { font-size: 1.6rem; margin-bottom: 30px; }
+    .narrative-text { font-size: 1.1rem; padding-left: 10px; border-left-width: 3px; }
+
+    /* Timeline mobile - single column */
+    .timeline::before { left: 15px; }
+    .timeline-item, .timeline-item.reverse {
+        padding-left: 35px;
+        margin: 40px 0;
+    }
+    .timeline-content { padding: 15px; }
+    .timeline-content h3 { font-size: 1.4rem; }
+    .timeline-content .date { font-size: 0.9rem; margin-bottom: 15px; }
+    .timeline-content p { font-size: 0.95rem; line-height: 1.5; }
+
+    /* Highlight cards - single column on mobile */
+    .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .highlight-card { height: 350px; }
+    .highlight-info { bottom: 20px; left: 20px; }
+    .highlight-info h3 { font-size: 1.4rem; }
+    .highlight-info p { font-size: 0.85rem; }
+
+    /* Key Games - mobile optimized */
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .game-card { padding: 20px; }
+    .game-header h3 { font-size: 1.4rem; }
+    .game-date { font-size: 0.75rem; }
+    .game-score { padding: 15px; margin: 20px 0; }
+    .team-score .team { font-size: 1rem; }
+    .team-score .score { font-size: 2.2rem; }
+    .stat-line { font-size: 0.95rem; }
+    .game-note { font-size: 0.85rem; }
+
+    /* Trophy grid - 2 columns on mobile */
+    .trophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .trophy-card i { font-size: 2.5rem; margin-bottom: 15px; }
+    .trophy-card h3 { font-size: 2rem; }
+    .trophy-card p { font-size: 0.85rem; }
+
+    /* Legacy cards */
+    .legacy-card {
+        min-width: 100%;
+        padding: 25px 20px;
+    }
+    .legacy-card h3 { font-size: 1.2rem; }
+    .legacy-card p { font-size: 0.9rem; }
+
+    /* Quotes */
+    blockquote { font-size: 1.4rem; padding: 0 15px; }
+
+    /* Stats */
+    .stat-card { min-width: 45%; }
+    .stat-value { font-size: 2.5rem; }
+    .stat-label { font-size: 0.8rem; }
+    .stats-grid { gap: 20px; }
+    .stats-note { font-size: 0.75rem; padding: 0 10px; }
+
+    /* Footer */
+    .footer { padding: 50px 15px; }
+    .footer h2 { font-size: 1.5rem; }
+    .footer p { font-size: 0.9rem; }
+    .footer .credits { font-size: 0.85rem; }
 }
