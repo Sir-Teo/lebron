@@ -6,7 +6,7 @@
     <title>LeBron James: The King at 41</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,24 +14,34 @@
 <body>
 
     <header class="hero">
+        <div class="overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in">LEBRON JAMES</h1>
-            <h2 class="fade-in delay-1">THE KING AT 41</h2>
-            <p class="fade-in delay-2">WITNESS HISTORY</p>
+            <i class="fas fa-crown main-logo fade-in"></i>
+            <h1 class="fade-in delay-1">LEBRON JAMES</h1>
+            <h2 class="fade-in delay-2">THE MOVIE OF A LEGEND</h2>
+            <p class="fade-in delay-3">EST. 1984 • AKRON, OH</p>
+            <button id="play-movie-btn" class="movie-btn fade-in delay-3">
+                <i class="fas fa-play"></i> WATCH THE JOURNEY
+            </button>
         </div>
         <div class="scroll-indicator fade-in delay-3">↓</div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="intro fade-on-scroll">
             <div class="container">
                 <p class="narrative-text">
-                    "From the streets of Akron to the global stage. He carried the weight of a city, then a nation, then the world. Today, we celebrate 41 years of greatness. The only player with 40,000 points, 11,000 rebounds, and 11,000 assists. The Standard."
+                    "I'm just a kid from Akron." <br>
+                    But the story written was anything but ordinary.
+                    From the Chosen One to the King.
+                    Witness the cinematic journey of the greatest basketball player of all time.
                 </p>
             </div>
         </section>
 
-        <section class="timeline">
+        <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
+
+        <section class="timeline" id="timeline">
             <!-- High School -->
             <div class="timeline-item fade-on-scroll">
                 <div class="timeline-img">
@@ -40,7 +50,7 @@
                 <div class="timeline-content">
                     <h3>THE CHOSEN ONE</h3>
                     <span class="date">St. Vincent–St. Mary (1999-2003)</span>
-                    <p>Before he was a professional, he was a prodigy. The most hyped prospect in sports history. 3x Ohio Mr. Basketball. National Champion. He didn't just meet expectations; he shattered them.</p>
+                    <p>The cover of Sports Illustrated at 17. The hummer. The hype. He averaged 31.6 points in his senior year. A man amongst boys.</p>
                 </div>
             </div>
 
@@ -50,9 +60,9 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/LeBronWizards1.jpg/250px-LeBronWizards1.jpg" alt="LeBron James Cavaliers First Stint">
                 </div>
                 <div class="timeline-content">
-                    <h3>THE HOMETOWN HERO</h3>
+                    <h3>THE SAVIOR</h3>
                     <span class="date">Cleveland Cavaliers (2003-2010)</span>
-                    <p>Drafted #1 overall. Rookie of the Year. He dragged a franchise to its first Finals in 2007 at just 22 years old. Back-to-back MVPs in 2009 and 2010. He put Cleveland on the map.</p>
+                    <p>2007 ECF Game 5. 25 straight points. He carried a city on his back. MVPs in '09 and '10. But the ring remained elusive.</p>
                 </div>
             </div>
 
@@ -62,9 +72,9 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/LeBronJamesDunkingHeat.jpg/250px-LeBronJamesDunkingHeat.jpg" alt="LeBron James Miami Heat">
                 </div>
                 <div class="timeline-content">
-                    <h3>SOUTH BEACH REIGN</h3>
+                    <h3>THE VILLAIN & THE CHAMPION</h3>
                     <span class="date">Miami Heat (2010-2014)</span>
-                    <p>"I'm taking my talents to South Beach." He embraced the villain role and forged a dynasty. Four straight Finals. Back-to-Back Championships (2012, 2013). 27-game win streak. Peak athletic dominance.</p>
+                    <p>"Not one, not two, not three..." The Heatles. The headband game. Game 6 in Boston. Back-to-back titles. He mastered the game.</p>
                 </div>
             </div>
 
@@ -76,49 +86,79 @@
                 <div class="timeline-content">
                     <h3>PROMISE KEPT</h3>
                     <span class="date">Cleveland Cavaliers (2014-2018)</span>
-                    <p>The greatest comeback in NBA history. Down 3-1 against the 73-win Warriors in 2016. "The Block" on Iguodala. The tears. "Cleveland! This is for you!" Ending the 52-year curse.</p>
+                    <p>3-1 Deficit. The Block. Kyrie's Shot. The Stop. "CLEVELAND! THIS IS FOR YOU!" The most important championship in NBA history.</p>
                 </div>
             </div>
 
-            <!-- Lakers Bubble -->
+            <!-- Lakers -->
             <div class="timeline-item fade-on-scroll">
                 <div class="timeline-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_2020.jpg/250px-LeBron_James_crop_2020.jpg" alt="LeBron James Lakers 2020">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_2020.jpg/250px-LeBron_James_crop_2020.jpg" alt="LeBron James Lakers">
                 </div>
                 <div class="timeline-content">
-                    <h3>RESTORING THE GLORY</h3>
-                    <span class="date">Los Angeles Lakers (2018-2020)</span>
-                    <p>Bringing the championship back to Los Angeles. Amidst the tragedy of losing Kobe, he led the Lakers to the 2020 title in the Bubble. 4th Ring. 4th Finals MVP. First player to win FMVP with three different franchises.</p>
+                    <h3>THE LAKER LEGACY</h3>
+                    <span class="date">Los Angeles Lakers (2018-Present)</span>
+                    <p>Restoring the Purple and Gold. The Bubble Ring. Passing Kareem. 40K Points. The longevity standard.</p>
                 </div>
             </div>
 
-             <!-- Scoring King -->
+             <!-- Father Time -->
              <div class="timeline-item fade-on-scroll reverse">
-                <div class="timeline-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/LeBron_James_Layup_%28Cleveland_vs_Lakers_2022%29.jpg/250px-LeBron_James_Layup_%28Cleveland_vs_Lakers_2022%29.jpg" alt="LeBron James Scoring Record">
-                </div>
-                <div class="timeline-content">
-                    <h3>THE SCORING KING</h3>
-                    <span class="date">February 7, 2023</span>
-                    <p>A record thought to be unbreakable. With a fadeaway jumper, LeBron surpassed Kareem Abdul-Jabbar's 38,387 points to become the NBA's All-Time Leading Scorer. History witnessed.</p>
-                </div>
-            </div>
-
-            <!-- Father Time -->
-            <div class="timeline-item fade-on-scroll">
                 <div class="timeline-img">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/LeBron_James_and_Bronny_James_%28cropped%29.jpg/250px-LeBron_James_and_Bronny_James_%28cropped%29.jpg" alt="LeBron and Bronny">
                 </div>
                 <div class="timeline-content">
-                    <h3>THE FATHER & THE FUTURE</h3>
+                    <h3>THE DYNASTY CONTINUES</h3>
                     <span class="date">2024-Present</span>
-                    <p>Defying time. The first active player to play alongside his son, Bronny James. Continuing to dominate into his 40s. Gold Medalist in Paris 2024. 50,000 career points. The longevity GOAT.</p>
+                    <p>Making history with Bronny. The first father-son duo. Still All-NBA at 40. The story isn't over yet.</p>
                 </div>
             </div>
         </section>
 
+        <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
+
+        <section class="highlights-section fade-on-scroll">
+            <h2 class="section-title">THE HIGHLIGHT REEL</h2>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="card-overlay"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/LeBron_James_%2815662939969%29.jpg/400px-LeBron_James_%2815662939969%29.jpg" alt="The Block">
+                    <div class="highlight-info">
+                        <h3>THE BLOCK</h3>
+                        <p>2016 Finals Game 7</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="card-overlay"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/LeBronWizards1.jpg/400px-LeBronWizards1.jpg" alt="25 Straight">
+                    <div class="highlight-info">
+                        <h3>25 STRAIGHT</h3>
+                        <p>2007 ECF Game 5</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="card-overlay"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/LeBronJamesDunkingHeat.jpg/400px-LeBronJamesDunkingHeat.jpg" alt="The Silencer">
+                    <div class="highlight-info">
+                        <h3>THE SILENCER</h3>
+                        <p>2014 vs Warriors</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <div class="card-overlay"></div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_2020.jpg/250px-LeBron_James_crop_2020.jpg" alt="Scoring King">
+                    <div class="highlight-info">
+                        <h3>SCORING KING</h3>
+                        <p>38,388 Points</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
+
         <section class="trophy-room fade-on-scroll">
-            <h2 class="section-title">THE TROPHY ROOM</h2>
+            <h2 class="section-title">TROPHY ROOM</h2>
             <div class="trophy-grid">
                 <div class="trophy-card">
                     <i class="fas fa-trophy"></i>
@@ -150,16 +190,6 @@
                     <h3>19x</h3>
                     <p>All-NBA</p>
                 </div>
-                 <div class="trophy-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>6x</h3>
-                    <p>All-Defensive</p>
-                </div>
-                 <div class="trophy-card">
-                    <i class="fas fa-award"></i>
-                    <h3>ROY</h3>
-                    <p>2004 Rookie of the Year</p>
-                </div>
             </div>
         </section>
 
@@ -168,15 +198,15 @@
             <div class="legacy-container">
                 <div class="legacy-card">
                     <h3>I PROMISE SCHOOL</h3>
-                    <p>In 2018, LeBron opened the I Promise School in Akron, providing education, meals, and support to at-risk children and their families. A model for community change.</p>
-                </div>
-                <div class="legacy-card">
-                    <h3>MORE THAN AN ATHLETE</h3>
-                    <p>A voice for social justice. From "I Can't Breathe" to voting rights initiatives, LeBron has used his platform to empower communities and challenge the status quo.</p>
+                    <p>Generational change for Akron's youth.</p>
                 </div>
                 <div class="legacy-card">
                     <h3>BUSINESS MOGUL</h3>
-                    <p>Founder of SpringHill Company. Lifetime deal with Nike. Stake in Fenway Sports Group (Liverpool FC, Red Sox). First active NBA billionaire.</p>
+                    <p>First active NBA billionaire.</p>
+                </div>
+                <div class="legacy-card">
+                    <h3>ACTIVISM</h3>
+                    <p>More Than A Vote.</p>
                 </div>
             </div>
         </section>
@@ -185,13 +215,7 @@
             <h2 class="section-title">WORDS OF THE KING</h2>
             <div class="quote-container">
                 <blockquote>
-                    "You can't be afraid to fail. It's the only way you succeed - you're not gonna succeed all the time, and I know that."
-                </blockquote>
-                <blockquote>
                     "Cleveland! This is for you!"
-                </blockquote>
-                <blockquote>
-                    "I want to be the greatest of all time. And that’s what I’m going to do."
                 </blockquote>
             </div>
         </section>
@@ -199,7 +223,7 @@
         <section class="stats-section fade-on-scroll">
             <h2 class="section-title">THE NUMBERS</h2>
             <div class="stats-grid">
-                <div class="stat-card">
+                 <div class="stat-card">
                     <span class="stat-value" id="points">0</span>
                     <span class="stat-label">Career Points</span>
                 </div>
@@ -220,9 +244,10 @@
         </section>
 
         <footer class="footer">
-            <h2>HAPPY 41ST BIRTHDAY, KING JAMES</h2>
+            <i class="fas fa-crown fa-2x" style="color:var(--gold); margin-bottom:10px;"></i>
+            <h2>HAPPY 41ST BIRTHDAY</h2>
             <p>December 30, 2025</p>
-            <p class="credits">Designed for the GOAT</p>
+            <p class="credits">THE CHOSEN ONE • THE KING • THE GOAT</p>
         </footer>
     </main>
 
