@@ -1,0 +1,302 @@
+:root {
+    --gold: #FDB927;
+    --purple: #552583;
+    --wine: #6F263D;
+    --black: #000000;
+    --dark-grey: #1a1a1a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_%282020%29.jpg/800px-LeBron_James_crop_%282020%29.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* Intro Section */
+.intro {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--dark-grey);
+}
+
+.narrative-text {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    color: #ddd;
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 50px 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--gold);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-content {
+    width: 40%;
+    padding: 30px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.timeline-img {
+    width: 40%;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.timeline-img img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(253, 185, 39, 0.2);
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.timeline-item:hover .timeline-img img {
+    filter: grayscale(0%);
+}
+
+.timeline-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.timeline-content h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content .date {
+    display: block;
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 100px 20px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lebron_wizards_2017_%28cropped%29.jpg/250px-Lebron_wizards_2017_%28cropped%29.jpg') no-repeat center center/cover;
+    position: relative;
+    text-align: center;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+}
+
+.section-title {
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: var(--white);
+    z-index: 2;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border: 1px solid var(--gold);
+    width: 250px;
+    backdrop-filter: blur(5px);
+}
+
+.stat-value {
+    display: block;
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--gold);
+    font-family: 'Oswald', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-note {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Footer */
+.footer {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #050505;
+    border-top: 1px solid #333;
+}
+
+.footer h2 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1.0s; }
+.delay-3 { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item, .timeline-item.reverse {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px;
+    }
+
+    .timeline-content, .timeline-img {
+        width: 100%;
+        padding: 0;
+    }
+
+    .timeline-img {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .timeline-content {
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+}
