@@ -1,0 +1,424 @@
+:root {
+    --gold: #FDB927;
+    --purple: #552583;
+    --black: #050505;
+    --dark-grey: #1a1a1a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_2020.jpg/800px-LeBron_James_crop_2020.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+}
+
+.main-logo {
+    font-size: 6rem;
+    color: var(--gold);
+    margin-bottom: 30px;
+    text-shadow: 0 0 30px rgba(253, 185, 39, 0.3);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 10px #000;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.movie-btn {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.movie-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+    box-shadow: 0 0 30px rgba(253, 185, 39, 0.6);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    color: var(--gold);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* Common Sections */
+section {
+    padding: 100px 20px;
+    position: relative;
+}
+
+.section-divider {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    color: var(--gold);
+    opacity: 0.3;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* Intro */
+.intro {
+    background-color: var(--dark-grey);
+    text-align: center;
+}
+
+.narrative-text {
+    font-size: 2rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Cinzel', serif;
+    color: #ddd;
+    border-left: 4px solid var(--gold);
+    padding-left: 30px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0; /* More spacing for cinematic feel */
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-content {
+    width: 35%;
+    padding: 40px;
+    background: linear-gradient(135deg, #111, #0a0a0a);
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.timeline-img {
+    width: 35%;
+    padding: 0 60px;
+    text-align: center;
+}
+
+.timeline-img img {
+    width: 100%;
+    border: 2px solid #333;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    transition: transform 0.5s ease;
+}
+
+.timeline-item:hover .timeline-img img {
+    transform: scale(1.05);
+    border-color: var(--gold);
+}
+
+.timeline-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.timeline-content h3 {
+    color: var(--gold);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content .date {
+    display: block;
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+
+.timeline-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Highlights */
+.highlights-section {
+    background: #080808;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #222;
+}
+
+.highlight-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.7);
+}
+
+.highlight-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    z-index: 1;
+}
+
+.highlight-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2;
+}
+
+.highlight-info h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.highlight-info p {
+    color: #fff;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Trophy Room */
+.trophy-room {
+    background-color: var(--dark-grey);
+}
+
+.trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trophy-card i {
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.trophy-card h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.trophy-card p {
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Legacy & Quotes */
+.legacy-section, .quotes-section {
+    text-align: center;
+}
+
+.legacy-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.legacy-card {
+    flex: 1;
+    min-width: 300px;
+    background: #111;
+    padding: 50px;
+    border-top: 3px solid var(--purple);
+}
+
+.legacy-card h3 {
+    color: var(--purple);
+}
+
+.quotes-section {
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/LeBronJamesDunkingHeat.jpg/1200px-LeBronJamesDunkingHeat.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+blockquote {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Stats */
+.stats-section {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lebron_wizards_2017_%28cropped%29.jpg/1200px-Lebron_wizards_2017_%28cropped%29.jpg') no-repeat center center/cover;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.stat-value {
+    font-size: 5rem;
+    color: var(--gold);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.stat-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Footer */
+.footer {
+    padding: 80px 20px;
+    text-align: center;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+.footer h2 {
+    color: var(--gold);
+    font-size: 2rem;
+}
+
+/* Animations */
+.fade-in { opacity: 0; animation: fadeIn 1.5s forwards; }
+.fade-on-scroll { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.fade-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1.0s; }
+.delay-3 { animation-delay: 1.5s; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .timeline::before { left: 30px; }
+    .timeline-item, .timeline-item.reverse { flex-direction: column; align-items: flex-start; padding-left: 80px; margin: 80px 0; }
+    .timeline-content, .timeline-img { width: 100%; padding: 0; }
+    .timeline-img { margin-bottom: 30px; text-align: left; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .section-title { font-size: 2.5rem; }
+}
