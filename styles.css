@@ -33,7 +33,7 @@ h1, h2, h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_%282020%29.jpg/800px-LeBron_James_crop_%282020%29.jpg');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/LeBron_James_crop_2020.jpg/800px-LeBron_James_crop_2020.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -174,6 +174,119 @@ h1, h2, h3 {
     line-height: 1.6;
 }
 
+/* Trophy Room */
+.trophy-room {
+    padding: 80px 20px;
+    background-color: var(--dark-grey);
+    text-align: center;
+}
+
+.trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trophy-card {
+    background: #111;
+    padding: 30px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animate trophy items when section is visible - handled by JS if I add specificity,
+   but for now, let's just make the section fade-on-scroll handle it */
+.trophy-room.visible .trophy-card {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.trophy-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.trophy-card i {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.trophy-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Legacy Section */
+.legacy-section {
+    padding: 80px 20px;
+    background-color: var(--black);
+    text-align: center;
+}
+
+.legacy-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.legacy-card {
+    flex: 1;
+    min-width: 300px;
+    background: #0a0a0a;
+    padding: 40px;
+    border-top: 3px solid var(--purple);
+    text-align: left;
+}
+
+.legacy-card h3 {
+    color: var(--purple);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Quotes Section */
+.quotes-section {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/LeBronJamesDunkingHeat.jpg/800px-LeBronJamesDunkingHeat.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+blockquote {
+    font-size: 2rem;
+    font-family: 'Cinzel', serif;
+    color: var(--white);
+    margin-bottom: 60px;
+    position: relative;
+    padding: 0 40px;
+}
+
+blockquote::before {
+    content: '"';
+    font-size: 5rem;
+    color: var(--gold);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    opacity: 0.3;
+}
+
 /* Stats Section */
 .stats-section {
     padding: 100px 20px;
@@ -189,7 +302,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.9);
 }
 
 .section-title {
@@ -252,10 +365,26 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
+.credits {
+    color: #555;
+    margin-top: 10px;
+}
+
 /* Animations */
 .fade-in {
     opacity: 0;
     animation: fadeIn 1.5s forwards;
+}
+
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.fade-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .delay-1 { animation-delay: 0.5s; }
@@ -298,5 +427,9 @@ h1, h2, h3 {
 
     .hero-content h2 {
         font-size: 2rem;
+    }
+
+    blockquote {
+        font-size: 1.5rem;
     }
 }
