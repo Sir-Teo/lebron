@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeBron James: The King at 41</title>
+    <meta name="description" content="Celebrate LeBron James' 41st birthday with an interactive cinematic journey through his legendary career. From Akron to the Lakers, witness the story of basketball's greatest player.">
+    <meta name="keywords" content="LeBron James, NBA, Basketball, King James, Lakers, Cleveland Cavaliers, Miami Heat, NBA Champion, MVP">
+    <meta name="author" content="LeBron James Fan Site">
+    <meta name="theme-color" content="#FDB927">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LeBron James: The King at 41">
+    <meta property="og:description" content="An interactive cinematic journey through LeBron James' legendary career">
+    <meta property="og:image" content="./images/lebron-lakers.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LeBron James: The King at 41">
+    <meta name="twitter:description" content="An interactive cinematic journey through LeBron James' legendary career">
+    <meta name="twitter:image" content="./images/lebron-lakers.jpg">
+
+    <title>LeBron James: The King at 41 | A Cinematic Journey</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lato:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -13,18 +31,18 @@
 </head>
 <body>
 
-    <header class="hero">
-        <div class="overlay"></div>
+    <header class="hero" role="banner">
+        <div class="overlay" aria-hidden="true"></div>
         <div class="hero-content">
-            <i class="fas fa-crown main-logo fade-in"></i>
+            <i class="fas fa-crown main-logo fade-in" aria-hidden="true"></i>
             <h1 class="fade-in delay-1">LEBRON JAMES</h1>
             <h2 class="fade-in delay-2">THE MOVIE OF A LEGEND</h2>
             <p class="fade-in delay-3">EST. 1984 • AKRON, OH</p>
-            <button id="play-movie-btn" class="movie-btn fade-in delay-3">
-                <i class="fas fa-play"></i> WATCH THE JOURNEY
+            <button id="play-movie-btn" class="movie-btn fade-in delay-3" aria-label="Watch LeBron James' cinematic journey">
+                <i class="fas fa-play" aria-hidden="true"></i> WATCH THE JOURNEY
             </button>
         </div>
-        <div class="scroll-indicator fade-in delay-3">↓</div>
+        <div class="scroll-indicator fade-in delay-3" aria-hidden="true">↓</div>
     </header>
 
     <main id="main-content">
@@ -41,176 +59,176 @@
 
         <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
 
-        <section class="timeline" id="timeline">
+        <section class="timeline" id="timeline" aria-label="LeBron James career timeline">
             <!-- High School -->
-            <div class="timeline-item fade-on-scroll">
+            <article class="timeline-item fade-on-scroll">
                 <div class="timeline-img">
-                    <img src="./images/lebron-high-school.jpg" alt="LeBron James High School">
+                    <img src="./images/lebron-high-school.jpg" alt="LeBron James in his high school basketball uniform at St. Vincent-St. Mary" loading="lazy">
                 </div>
                 <div class="timeline-content">
                     <h3>THE CHOSEN ONE</h3>
                     <span class="date">St. Vincent–St. Mary (1999-2003)</span>
                     <p>The cover of Sports Illustrated at 17. The hummer. The hype. He averaged 31.6 points in his senior year. A man amongst boys.</p>
                 </div>
-            </div>
+            </article>
 
             <!-- Cleveland Part 1 -->
-            <div class="timeline-item fade-on-scroll reverse">
+            <article class="timeline-item fade-on-scroll reverse">
                 <div class="timeline-img">
-                    <img src="./images/lebron-cavs-first.jpg" alt="LeBron James Cavaliers First Stint">
+                    <img src="./images/lebron-cavs-first.jpg" alt="LeBron James playing for Cleveland Cavaliers during his first stint" loading="lazy">
                 </div>
                 <div class="timeline-content">
                     <h3>THE SAVIOR</h3>
                     <span class="date">Cleveland Cavaliers (2003-2010)</span>
                     <p>2007 ECF Game 5. 25 straight points. He carried a city on his back. MVPs in '09 and '10. But the ring remained elusive.</p>
                 </div>
-            </div>
+            </article>
 
             <!-- Miami Heat -->
-            <div class="timeline-item fade-on-scroll">
+            <article class="timeline-item fade-on-scroll">
                 <div class="timeline-img">
-                    <img src="./images/lebron-heat.jpg" alt="LeBron James Miami Heat">
+                    <img src="./images/lebron-heat.jpg" alt="LeBron James celebrating with Miami Heat during championship run" loading="lazy">
                 </div>
                 <div class="timeline-content">
                     <h3>THE VILLAIN & THE CHAMPION</h3>
                     <span class="date">Miami Heat (2010-2014)</span>
                     <p>"Not one, not two, not three..." The Heatles. The headband game. Game 6 in Boston. Back-to-back titles. He mastered the game.</p>
                 </div>
-            </div>
+            </article>
 
             <!-- The Return -->
-            <div class="timeline-item fade-on-scroll reverse">
+            <article class="timeline-item fade-on-scroll reverse">
                 <div class="timeline-img">
-                    <img src="./images/lebron-cavs-return.jpg" alt="LeBron James The Return">
+                    <img src="./images/lebron-cavs-return.jpg" alt="LeBron James making the block in 2016 NBA Finals Game 7" loading="lazy">
                 </div>
                 <div class="timeline-content">
                     <h3>PROMISE KEPT</h3>
                     <span class="date">Cleveland Cavaliers (2014-2018)</span>
                     <p>3-1 Deficit. The Block. Kyrie's Shot. The Stop. "CLEVELAND! THIS IS FOR YOU!" The most important championship in NBA history.</p>
                 </div>
-            </div>
+            </article>
 
             <!-- Lakers -->
-            <div class="timeline-item fade-on-scroll">
+            <article class="timeline-item fade-on-scroll">
                 <div class="timeline-img">
-                    <img src="./images/lebron-lakers.jpg" alt="LeBron James Lakers">
+                    <img src="./images/lebron-lakers.jpg" alt="LeBron James wearing Lakers jersey number 23" loading="lazy">
                 </div>
                 <div class="timeline-content">
                     <h3>THE LAKER LEGACY</h3>
                     <span class="date">Los Angeles Lakers (2018-Present)</span>
                     <p>Restoring the Purple and Gold. The Bubble Ring. Passing Kareem. 40K Points. The longevity standard.</p>
                 </div>
-            </div>
+            </article>
 
              <!-- Father Time -->
-             <div class="timeline-item fade-on-scroll reverse">
+             <article class="timeline-item fade-on-scroll reverse">
                 <div class="timeline-img">
-                    <img src="./images/lebron-bronny.jpg" alt="LeBron and Bronny">
+                    <img src="./images/lebron-bronny.jpg" alt="LeBron James and his son Bronny making NBA history as first father-son duo" loading="lazy">
                 </div>
                 <div class="timeline-content">
                     <h3>THE DYNASTY CONTINUES</h3>
                     <span class="date">2024-Present</span>
                     <p>Making history with Bronny. The first father-son duo. Still All-NBA at 40. The story isn't over yet.</p>
                 </div>
-            </div>
+            </article>
         </section>
 
         <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
 
-        <section class="highlights-section fade-on-scroll">
+        <section class="highlights-section fade-on-scroll" aria-label="Career highlights and memorable moments">
             <h2 class="section-title">THE HIGHLIGHT REEL</h2>
             <div class="highlight-grid">
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-cavs-return-large.jpg" alt="The Block">
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-cavs-return-large.jpg" alt="LeBron James iconic block on Andre Iguodala in 2016 Finals Game 7" loading="lazy">
                     <div class="highlight-info">
                         <h3>THE BLOCK</h3>
                         <p>2016 Finals Game 7</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-cavs-first-large.jpg" alt="25 Straight">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-cavs-first-large.jpg" alt="LeBron James scoring 25 straight points against Detroit Pistons" loading="lazy">
                     <div class="highlight-info">
                         <h3>25 STRAIGHT</h3>
                         <p>2007 ECF Game 5 vs Pistons</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-heat-large.jpg" alt="Game 6 Boston">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-heat-large.jpg" alt="LeBron James dominating Game 6 against Boston Celtics in 2012" loading="lazy">
                     <div class="highlight-info">
                         <h3>GAME 6 BOSTON</h3>
                         <p>45 pts, 15 reb - 2012 ECF</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-lakers-large.jpg" alt="Scoring King">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-lakers-large.jpg" alt="LeBron James becoming NBA's all-time leading scorer" loading="lazy">
                     <div class="highlight-info">
                         <h3>SCORING KING</h3>
                         <p>50,473+ Points</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-high-school.jpg" alt="The Chosen One">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-high-school.jpg" alt="LeBron James featured on Sports Illustrated cover as The Chosen One at age 17" loading="lazy">
                     <div class="highlight-info">
                         <h3>SI COVER AT 17</h3>
                         <p>"The Chosen One" - 2002</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-heat.jpg" alt="2013 Finals Game 7">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-heat.jpg" alt="LeBron James winning 2013 NBA Finals Game 7 against San Antonio Spurs" loading="lazy">
                     <div class="highlight-info">
                         <h3>2013 GAME 7</h3>
                         <p>37 pts vs Spurs - Back to Back</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-cavs-first.jpg" alt="2018 Game 1">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-cavs-first.jpg" alt="LeBron James heroic 51-point performance in 2018 Finals Game 1" loading="lazy">
                     <div class="highlight-info">
                         <h3>51 IN GAME 1</h3>
                         <p>2018 Finals - Superhuman</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-lakers.jpg" alt="Bubble Championship">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-lakers.jpg" alt="LeBron James winning 2020 NBA Championship in the bubble" loading="lazy">
                     <div class="highlight-info">
                         <h3>BUBBLE KING</h3>
                         <p>4th Ring - 2020 Finals MVP</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-bronny.jpg" alt="Father-Son History">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-bronny.jpg" alt="Historic moment: LeBron and Bronny James first father-son duo in NBA history" loading="lazy">
                     <div class="highlight-info">
                         <h3>FATHER & SON</h3>
                         <p>First NBA Duo - 2024</p>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-overlay"></div>
-                    <img src="./images/lebron-cavs-return.jpg" alt="The Stop">
+                </article>
+                <article class="highlight-card">
+                    <div class="card-overlay" aria-hidden="true"></div>
+                    <img src="./images/lebron-cavs-return.jpg" alt="LeBron James defensive stop on Stephen Curry in 2016 Finals Game 7" loading="lazy">
                     <div class="highlight-info">
                         <h3>THE STOP</h3>
                         <p>Curry Denied - 2016 Game 7</p>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
 
-        <section class="key-games-section fade-on-scroll">
+        <section class="key-games-section fade-on-scroll" aria-label="Legendary game performances">
             <h2 class="section-title">LEGENDARY PERFORMANCES</h2>
             <div class="games-grid">
-                <div class="game-card">
+                <article class="game-card">
                     <div class="game-header">
-                        <span class="game-date">June 19, 2016</span>
+                        <time class="game-date" datetime="2016-06-19">June 19, 2016</time>
                         <h3>GAME 7 - 2016 FINALS</h3>
                     </div>
                     <div class="game-score">
@@ -227,11 +245,11 @@
                         <p class="stat-line">27 PTS • 11 REB • 11 AST • 3 BLK • 2 STL</p>
                         <p class="game-note">The Block. The Stop. Promise Kept.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="game-card">
+                <article class="game-card">
                     <div class="game-header">
-                        <span class="game-date">May 31, 2007</span>
+                        <time class="game-date" datetime="2007-05-31">May 31, 2007</time>
                         <h3>GAME 5 - ECF</h3>
                     </div>
                     <div class="game-score">
@@ -248,11 +266,11 @@
                         <p class="stat-line">48 PTS • 9 REB • 7 AST</p>
                         <p class="game-note">29 of team's last 30 points. 25 straight.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="game-card">
+                <article class="game-card">
                     <div class="game-header">
-                        <span class="game-date">June 7, 2012</span>
+                        <time class="game-date" datetime="2012-06-07">June 7, 2012</time>
                         <h3>GAME 6 - ECF</h3>
                     </div>
                     <div class="game-score">
@@ -269,11 +287,11 @@
                         <p class="stat-line">45 PTS • 15 REB • 5 AST</p>
                         <p class="game-note">Elimination game. No headband. Unstoppable.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="game-card">
+                <article class="game-card">
                     <div class="game-header">
-                        <span class="game-date">June 20, 2013</span>
+                        <time class="game-date" datetime="2013-06-20">June 20, 2013</time>
                         <h3>GAME 7 - FINALS</h3>
                     </div>
                     <div class="game-score">
@@ -290,11 +308,11 @@
                         <p class="stat-line">37 PTS • 12 REB • 4 AST</p>
                         <p class="game-note">Back-to-back champion. Finals MVP.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="game-card">
+                <article class="game-card">
                     <div class="game-header">
-                        <span class="game-date">May 31, 2018</span>
+                        <time class="game-date" datetime="2018-05-31">May 31, 2018</time>
                         <h3>GAME 1 - FINALS</h3>
                     </div>
                     <div class="game-score">
@@ -311,11 +329,11 @@
                         <p class="stat-line">51 PTS • 8 REB • 8 AST</p>
                         <p class="game-note">Heroic effort. One man vs. a dynasty.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="game-card">
+                <article class="game-card">
                     <div class="game-header">
-                        <span class="game-date">October 11, 2020</span>
+                        <time class="game-date" datetime="2020-10-11">October 11, 2020</time>
                         <h3>GAME 6 - FINALS</h3>
                     </div>
                     <div class="game-score">
@@ -332,102 +350,102 @@
                         <p class="stat-line">28 PTS • 14 REB • 10 AST</p>
                         <p class="game-note">Bubble triumph. 4th ring, 4th team.</p>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <div class="section-divider fade-on-scroll"><i class="fas fa-crown"></i></div>
 
-        <section class="trophy-room fade-on-scroll">
+        <section class="trophy-room fade-on-scroll" aria-label="Awards and achievements">
             <h2 class="section-title">TROPHY ROOM</h2>
             <div class="trophy-grid">
-                <div class="trophy-card">
-                    <i class="fas fa-trophy"></i>
+                <article class="trophy-card">
+                    <i class="fas fa-trophy" aria-hidden="true"></i>
                     <h3>4x</h3>
                     <p>NBA Champion</p>
-                </div>
-                <div class="trophy-card">
-                    <i class="fas fa-crown"></i>
+                </article>
+                <article class="trophy-card">
+                    <i class="fas fa-crown" aria-hidden="true"></i>
                     <h3>4x</h3>
                     <p>NBA MVP</p>
-                </div>
-                <div class="trophy-card">
-                    <i class="fas fa-star"></i>
+                </article>
+                <article class="trophy-card">
+                    <i class="fas fa-star" aria-hidden="true"></i>
                     <h3>4x</h3>
                     <p>Finals MVP</p>
-                </div>
-                <div class="trophy-card">
-                    <i class="fas fa-medal"></i>
+                </article>
+                <article class="trophy-card">
+                    <i class="fas fa-medal" aria-hidden="true"></i>
                     <h3>3x</h3>
                     <p>Olympic Gold</p>
-                </div>
-                 <div class="trophy-card">
-                    <i class="fas fa-basketball-ball"></i>
+                </article>
+                 <article class="trophy-card">
+                    <i class="fas fa-basketball-ball" aria-hidden="true"></i>
                     <h3>21x</h3>
                     <p>All-Star</p>
-                </div>
-                 <div class="trophy-card">
-                    <i class="fas fa-certificate"></i>
+                </article>
+                 <article class="trophy-card">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
                     <h3>21x</h3>
                     <p>All-NBA</p>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section class="legacy-section fade-on-scroll">
+        <section class="legacy-section fade-on-scroll" aria-label="Off-court legacy and impact">
             <h2 class="section-title">BEYOND THE COURT</h2>
             <div class="legacy-container">
-                <div class="legacy-card">
+                <article class="legacy-card">
                     <h3>I PROMISE SCHOOL</h3>
                     <p>Generational change for Akron's youth.</p>
-                </div>
-                <div class="legacy-card">
+                </article>
+                <article class="legacy-card">
                     <h3>BUSINESS MOGUL</h3>
                     <p>First active NBA billionaire.</p>
-                </div>
-                <div class="legacy-card">
+                </article>
+                <article class="legacy-card">
                     <h3>ACTIVISM</h3>
                     <p>More Than A Vote.</p>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section class="quotes-section fade-on-scroll">
+        <section class="quotes-section fade-on-scroll" aria-label="Memorable quotes">
             <h2 class="section-title">WORDS OF THE KING</h2>
             <div class="quote-container">
-                <blockquote>
+                <blockquote cite="2016 NBA Finals">
                     "Cleveland! This is for you!"
                 </blockquote>
             </div>
         </section>
 
-        <section class="stats-section fade-on-scroll">
+        <section class="stats-section fade-on-scroll" aria-label="Career statistics">
             <h2 class="section-title">THE NUMBERS</h2>
             <div class="stats-grid">
-                 <div class="stat-card">
-                    <span class="stat-value" id="points">0</span>
+                 <article class="stat-card">
+                    <span class="stat-value" id="points" aria-label="Career points">0</span>
                     <span class="stat-label">Career Points</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value" id="rings">0</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-value" id="rings" aria-label="Championship rings">0</span>
                     <span class="stat-label">Championships</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value" id="mvps">0</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-value" id="mvps" aria-label="Most Valuable Player awards">0</span>
                     <span class="stat-label">MVPs</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value" id="allstar">0</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-value" id="allstar" aria-label="All-star selections">0</span>
                     <span class="stat-label">All-Star Selections</span>
-                </div>
+                </article>
             </div>
             <p class="stats-note">*Regular Season + Playoffs projections through Dec 2025</p>
         </section>
 
-        <footer class="footer">
-            <i class="fas fa-crown fa-2x" style="color:var(--gold); margin-bottom:10px;"></i>
+        <footer class="footer" role="contentinfo">
+            <i class="fas fa-crown fa-2x" style="color:var(--gold); margin-bottom:10px;" aria-hidden="true"></i>
             <h2>HAPPY 41ST BIRTHDAY</h2>
-            <p>December 30, 2025</p>
+            <time datetime="2025-12-30">December 30, 2025</time>
             <p class="credits">THE CHOSEN ONE • THE KING • THE GOAT</p>
         </footer>
     </main>
